@@ -35,7 +35,7 @@ class QuoteController extends Controller
      */
     public function show(Quote $quote)
     {
-        //
+        return $quote;
     }
 
     /**
