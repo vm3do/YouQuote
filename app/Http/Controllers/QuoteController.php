@@ -43,7 +43,14 @@ class QuoteController extends Controller
      */
     public function update(Request $request, Quote $quote)
     {
-        //
+        $vaidated = $request->validate([
+            'title' => 'required|min:2|max:255',
+            'body' => 'required',
+        ]);
+
+        $quote->update($vaidated);
+
+        return $quote;
     }
 
     /**
